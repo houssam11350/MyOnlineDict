@@ -1,0 +1,27 @@
+# this is comment
+#url@@@@@@@@title@@@@@@@@scrolldown=100@@@@@@@@scrollright=100@@@@@@@@zoomlevel=100
+https://www.arabdict.com/de/deutsch-arabisch/%WORD%@@@@@@@@ArabDict@@@@@@@@scrolldown=200@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
+https://www.almaany.com/ar/dict/ar-de/%WORD%/@@@@@@@@Almaany@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://translate.google.com/#de/ar/%WORD%@@@@@@@@Google DE->AR@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
+https://translate.google.com/#ar/de/%WORD%@@@@@@@@Google AR->DE@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
+https://www.dict.cc/?s=%WORD%@@@@@@@@dict.cc@@@@@@@@scrolldown=0@@@@@@@@scrollright=200@@@@@@@@zoomlevel=90
+https://translate.google.com/#de/en/%WORD%@@@@@@@@Google DE->EN@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
+https://www.verbformen.com/conjugation/?w=%WORD%@@@@@@@@Verbformen@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://www.linguee.de/deutsch-englisch/search?source=auto&query=%WORD%@@@@@@@@Linquee@@@@@@@@scrolldown=0@@@@@@@@scrollright=150@@@@@@@@zoomlevel=100
+https://dictionary.reverso.net/german-english/%WORD%@@@@@@@@Reverso@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://dict.tu-chemnitz.de/dings.cgi?noframes=1&query=%WORD%@@@@@@@@chemnitz@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://de.langenscheidt.com/deutsch-englisch/search?term=%WORD%@@@@@@@@Lengenscheidt@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://de.pons.com/%C3%BCbersetzung?q=%WORD%&l=deen&in=&lf=de@@@@@@@@Pons@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+https://www.duden.de/suchen/dudenonline/%WORD%@@@@@@@@Duden@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
+
+#please don't edit or delete the next line : [right_click_dict]
+[right_click_dict]
+#url@@@@@@@@title@@@@@@@@fn // fn=f1,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12
+https://www.arabdict.com/de/deutsch-arabisch/%WORD%@@@@@@@@ArabDict@@@@@@@@f3
+https://translate.google.com/#de/ar/%WORD%@@@@@@@@My Google DE->AR@@@@@@@@f4
+https://translate.google.com/#de/en/%WORD%@@@@@@@@My Google DE->EN@@@@@@@@f5
+https://translate.google.com/#en/ar/%WORD%@@@@@@@@Google En->AR@@@@@@@@f6
+https://www.almaany.com/ar/dict/ar-de/%WORD%/@@@@@@@@Almaany@@@@@@@@f7
+#https://www.dict.cc/?s=%WORD%@@@@@@@@dict.cc@@@@@@@@no
+#https://www.verbformen.com/conjugation/?w=%WORD%@@@@@@@@no
+#https://www.linguee.de/deutsch-englisch/search?source=auto&query=%WORD%@@@@@@@@no
