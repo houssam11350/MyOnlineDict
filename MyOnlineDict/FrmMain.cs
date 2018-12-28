@@ -260,7 +260,8 @@ namespace MyOnlineDict
             //isLoaded = true;
             ActiveControl = txtWord;
             ReloadDicts();
-   
+           
+
         }
         private bool KeyIsDown(Keys key)
         {
