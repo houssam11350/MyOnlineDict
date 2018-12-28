@@ -18,6 +18,7 @@ using CefSharp.WinForms;
 using System.Threading;
 using System.IO;
 using System.Net;
+using Microsoft.Win32;
 //using MyOnlineDict.Hook;
 
 namespace MyOnlineDict
@@ -252,12 +253,14 @@ namespace MyOnlineDict
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            
             // HookManager.KeyDown += HookManager_KeyDown;
 
             _ClipboardViewerNext = Win32.User32.SetClipboardViewer(this.Handle);
             //isLoaded = true;
             ActiveControl = txtWord;
             ReloadDicts();
+   
         }
         private bool KeyIsDown(Keys key)
         {
@@ -304,6 +307,7 @@ namespace MyOnlineDict
                     break;
                 case Win32.Msgs.WM_DRAWCLIPBOARD:
                     //lblTextCopied.Visible = true;
+                    if (this.WindowState == FormWindowState.Minimized) return;
                     string txtFromclipboard = Clipboard.GetText();
                     txtFromclipboard = txtFromclipboard.TrimStart(
                         Convert.ToChar(8226) // bulltet
@@ -456,6 +460,7 @@ namespace MyOnlineDict
 
         private void goTranslate()
         {
+            if (this.WindowState == FormWindowState.Minimized) return;
             if (isFirstRun)
             {
                 isFirstRun = false;
@@ -472,7 +477,7 @@ namespace MyOnlineDict
                 AddWordToHistory(word);
                 MakeNextPrevEnable();
             }
-            if (this.WindowState == FormWindowState.Minimized) return;
+            
             int index = tabCtrlMain.SelectedIndex;
             if (index >= lstCtrlBrowser.Count || index < 0) return;
             CtrlBrowser ctrlBrowser = lstCtrlBrowser[index];
