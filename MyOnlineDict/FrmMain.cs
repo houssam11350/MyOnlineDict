@@ -79,6 +79,7 @@ namespace MyOnlineDict
             string path = Path.GetDirectoryName(Application.ExecutablePath);
             var lines = File.ReadAllLines(Path.Combine(path, "mydicts.txt"));
             bool isInRightClickDict = false;
+            string error = string.Empty;
             foreach (string line in lines)
             {
                 if (string.IsNullOrEmpty(line)) continue;
@@ -88,25 +89,50 @@ namespace MyOnlineDict
                     isInRightClickDict = true;
                     continue;
                 }
-
+                if (!line.Contains("%WORD%")) error = error + Environment.NewLine + "LINE:" + line + " conatins no %WORD%";
                 string[] ar = line.Split(new string[] { MY_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
                 if (isInRightClickDict)
                 {
                     MenuBrowser menuBrowser = new MenuBrowser();
                     menuBrowser.Command = command++;
                     menuBrowser.Url = ar[0];
-                    menuBrowser.Name = ar[1];
+                    if (ar.Length >= 2)
+                        menuBrowser.Name = ar[1];
+                    else
+                    {
+                        try
+                        {
+                            Uri uri = new Uri(menuBrowser.Url);
+                            menuBrowser.Name = uri.Host;
+                        }
+                        catch
+                        {
+                        }
+                    }
+
                     if (ar.Length >= 2 && ar[2].StartsWith("f", StringComparison.CurrentCultureIgnoreCase))
                         menuBrowser.Shortcut = ar[2].ToUpper();
                     lstMenuBrowser.Add(menuBrowser);
-                    
+
 
                 }
                 else
                 {
                     MyBrowserInfo info = new MyBrowserInfo();
                     info.Url = ar[0];
-                    info.Name = ar[1];
+                    if (ar.Length >= 2)
+                        info.Name = ar[1];
+                    else
+                    {
+                        try
+                        {
+                            Uri uri = new Uri(info.Url);
+                            info.Name = uri.Host;
+                        }
+                        catch
+                        {
+                        }
+                    }
                     for (int i = 2; i < ar.Length; i++)
                     {
                         string[] ar2 = ar[i].Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
@@ -142,7 +168,7 @@ namespace MyOnlineDict
                 {
                     MyLabel lbl = new MyLabel();
                     lbl.AutoSize = true;
-                    lbl.Text = l_menuBrowser.Name + " [" + l_menuBrowser.Shortcut+"]";
+                    lbl.Text = l_menuBrowser.Name + " [" + l_menuBrowser.Shortcut + "]";
                     //mainMenu.Items.Add(lbl.Text);
                     lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     lbl.Padding = new System.Windows.Forms.Padding(2);
@@ -152,9 +178,7 @@ namespace MyOnlineDict
                     lbl.MouseDoubleClick += Lbl_MouseDoubleClick;
                     lbl.Cursor = Cursors.Hand;
                     pnlShortcuts.Controls.Add(lbl);
-
                 }
-
             }
             pnlShortcuts.ResumeLayout();
 
@@ -180,6 +204,7 @@ namespace MyOnlineDict
             }
             tabCtrlMain.ResumeLayout();
             this.ResumeLayout();
+            if (!string.IsNullOrEmpty(error)) Helper.ERRORMSG(error);
         }
 
         private void Lbl_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -308,7 +333,7 @@ namespace MyOnlineDict
                             lMenuBrowser.FrmTranslateModal = new FrmTranslateModal(this);
                             lMenuBrowser.FrmTranslateModal.frmMain = this;
                         }
-                            
+
                         lMenuBrowser.FrmTranslateModal.Translate(lMenuBrowser, tmp_word);
                         lMenuBrowser.FrmTranslateModal.Show(this);
                     }
@@ -674,9 +699,9 @@ namespace MyOnlineDict
                         fi.Refresh();
                     }
                 }
-                catch 
+                catch
                 {
-                   // Debug.WriteLine(e.Message);
+                    // Debug.WriteLine(e.Message);
                     //errors = true;
                 }
             }
@@ -695,14 +720,14 @@ namespace MyOnlineDict
                         di.Refresh();
                     }
                 }
-                catch 
+                catch
                 {
                     //Debug.WriteLine(e.Message);
                     //errors = true;
                 }
             }
 
-           // return !errors;
+            // return !errors;
         }
         private void tsDeleteCache_Click(object sender, EventArgs e)
         {
@@ -721,7 +746,7 @@ namespace MyOnlineDict
             catch
             {
                 Helper.ERRORMSG("Cannot open :" + Environment.NewLine + filePath);
-               
+
             }
         }
     }

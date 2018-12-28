@@ -1,5 +1,6 @@
 # this is comment
 #url@@@@@@@@title@@@@@@@@scrolldown=100@@@@@@@@scrollright=100@@@@@@@@zoomlevel=100
+#url@@@@@@@@title
 https://www.arabdict.com/de/deutsch-arabisch/%WORD%@@@@@@@@ArabDict@@@@@@@@scrolldown=200@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
 https://www.almaany.com/ar/dict/ar-de/%WORD%/@@@@@@@@Almaany@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
 https://translate.google.com/#de/ar/%WORD%@@@@@@@@Google DE->AR@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=90
@@ -14,12 +15,14 @@ https://de.langenscheidt.com/deutsch-englisch/search?term=%WORD%@@@@@@@@Lengensc
 https://de.pons.com/%C3%BCbersetzung?q=%WORD%&l=deen&in=&lf=de@@@@@@@@Pons@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
 https://www.duden.de/suchen/dudenonline/%WORD%@@@@@@@@Duden@@@@@@@@scrolldown=0@@@@@@@@scrollright=0@@@@@@@@zoomlevel=100
 
+
 #please don't edit or delete the next line : [right_click_dict]
 [right_click_dict]
 #url@@@@@@@@title@@@@@@@@fn // fn=f1,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12
+#url@@@@@@@@title
 https://www.arabdict.com/de/deutsch-arabisch/%WORD%@@@@@@@@ArabDict@@@@@@@@f3
-https://translate.google.com/#de/ar/%WORD%@@@@@@@@My Google DE->AR@@@@@@@@f4
-https://translate.google.com/#de/en/%WORD%@@@@@@@@My Google DE->EN@@@@@@@@f5
+https://translate.google.com/#de/ar/%WORD%@@@@@@@@Google DE->AR@@@@@@@@f4
+https://translate.google.com/#de/en/%WORD%@@@@@@@@Google DE->EN@@@@@@@@f5
 https://translate.google.com/#en/ar/%WORD%@@@@@@@@Google En->AR@@@@@@@@f6
 https://www.almaany.com/ar/dict/ar-de/%WORD%/@@@@@@@@Almaany@@@@@@@@f7
 #https://www.dict.cc/?s=%WORD%@@@@@@@@dict.cc@@@@@@@@no
